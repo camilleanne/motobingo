@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  font-size: 2em;
+}
+
+.box {
+  background-color: #effffe;
+  border: thin solid black;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  vertical-align: center;
+  line-height:20px
+}
+
+#board {
+  max-width: 800px;
+  margin: auto;
+}
+
+.box.clicked:not(.free){
+  background-color: #4c90ff;
+}
+
+.free {
+  background-color: red;
+  font-size: 50px;
+  text-align: center;
+}
