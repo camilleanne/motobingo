@@ -13,7 +13,7 @@ var categories = [
 	'any number of doors or windows',
 	'a TV',
 	'no headlights at night',
-	'a passenger riding "side-saddle"',
+	'someone riding \'side-saddle\'',
 	'a tourist',
 	'a basket of eggs',
 	'three wheels',

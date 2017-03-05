@@ -3,35 +3,62 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 100px;
+  padding: 10px;
   color: white;
   font-size: 2em;
 }
 
+h2 {
+  margin: 0px;
+}
+
+#scooter {
+  height: 60px;
+  top: 10px;
+  position: relative;
+}
+
 .box {
-  background-color: #effffe;
-  border: thin solid black;
-  justify-content: center;
   padding: 10px;
-  align-items: center;
   display: flex;
+  background-color: #DEFFF9;
+  border: 1px solid #334D5C;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+
   vertical-align: center;
-  line-height:20px
+  justify-content: center;
+  align-items: center;
+  line-height: 20px;
+
+  color: #334D5C;
+  font-size: 1.1em;
+  font-weight: 500;
+
 }
 
 #board {
-  max-width: 800px;
+  max-width: 600px;
+  height: 600px;
   margin: auto;
 }
 
 .box.clicked:not(.free){
-  background-color: #4c90ff;
+  background-color: #ffd903;
 }
 
 .free {
   background-color: red;
   font-size: 50px;
   text-align: center;
+}
+
+.small-caps {
+  font-variant: small-caps;
+}
+
+.yellow {
+  color: #ffd903;
 }

@@ -26,7 +26,7 @@ class Box extends React.Component {
 
   render() {
     return (
-      <Flexbox flexGrow={1} width='20px' className={['box', this.props.classes, ((this.state.clicked) ? 'clicked' : '')].join(' ') } onClick={this.handleClick}>
+      <Flexbox flexGrow={1} width='100px' className={['box', this.props.classes, ((this.state.clicked) ? 'clicked' : '')].join(' ') } onClick={this.handleClick}>
        {this.props.content}
       </Flexbox>
     );
@@ -48,7 +48,7 @@ function build() {
       } 
     }
     rows.push(
-      <Flexbox flexDirection="row" minHeight="20vh" key={row} className='row'>
+      <Flexbox flexDirection="row" height="120px" key={row} className='row'>
         {boxes}
       </Flexbox>
     );
@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2> ____ on a <img src={scooter} /> bingo</h2>
+          <h2> <span className='yellow'>____</span> on a <img src={scooter} id="scooter" /> <span className='small-caps'>bingo</span></h2>
         </div>
         <div id='board'>
           { build() }

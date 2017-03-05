@@ -1,32 +1,6 @@
 body {
   margin: 0;
-  background-color: black;
+  background-color: #334D5C;
   padding: 0;
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-}
-
-.box {
-  background-color: #effffe;
-  border: thin solid black;
-  justify-content: center;
-  padding: 10px;
-  align-items: center;
-  display: flex;
-  vertical-align: center;
-  line-height:20px
-}
-
-#board {
-  max-width: 800px;
-  margin: auto;
-}
-
-.box.clicked:not(.free){
-  background-color: #4c90ff;
-}
-
-.free {
-  background-color: red;
-  font-size: 50px;
-  text-align: center;
 }
