@@ -63,7 +63,7 @@ class App extends Component {
     return (
       <div className='App'>
         <div className='App-header'>
-          <h2> <span className='yellow'>____</span> on a <img src={scooter} id='scooter' alt='scooter' /> <span className='small-caps'>bingo</span></h2>
+          <h2> <span className='yellow blank'>____</span> on a <img src={scooter} id='scooter' alt='scooter' /> <br/><span className='small-caps'>bingo</span></h2>
         </div>
         <div id='board'>
           { build() }
