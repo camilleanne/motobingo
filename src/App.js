@@ -73,6 +73,7 @@ class App extends Component {
 
             <h2 className='yellow'>rules</h2>
             <ul className='list'>
+              <li><p><span className='bold'>Standard Bingo rules</span> — continue playing until one player has covered a vertical, horizontal, or diagonal pattern of five grid spaces on their card. First player to get Bingo wins the game.</p></li>
               <li><p><span className='bold'>Combos are cool</span> — you see a family of four with their pet dog, mark both categories, you see a dude on a moto with a tree without headlights? You get both.</p></li>
               <li><p><span className='bold'>Winner of the game buys the beers that night</span> — why not the loser? Because the winner was the lucky duck who saw all this magic.</p></li>
               <li><p><span className='bold'>This game never really ends</span></p></li>
