@@ -19,7 +19,10 @@ var categories = [
 	'three wheels',
 	'open containers of water',
 	'a pig',
-	''
+	'50 gallon drum',
+	'flowers',
+	'a keg',
+	'furniture'
 ];
 
 module.exports = categories;

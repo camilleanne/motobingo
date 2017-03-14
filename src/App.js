@@ -40,15 +40,17 @@ function build() {
     var boxes = [];
 
     for (var column = 0; column < no; column++) {
+      // if it is the center box, make it a star
       if (row === 2 && column === 2) {
-        boxes.push(<Box content={<img src={star} />} key={row + '!' + column} classes='free' />);
+        boxes.push(<Box content={<img src={star} alt='star' />} key={row + '!' + column} classes='free' />);
       } else {
+        // randomize the categories
         var idx = Math.floor(Math.random() * (categories.length - 0)) + 0;
         boxes.push(< Box content={(categories.splice(idx, 1)[0] || 'nope')} key={row + '!' + column} classes='' />);
       } 
     }
     rows.push(
-      <Flexbox flexDirection="row" height="120px" key={row} className='row'>
+      <Flexbox flexDirection='row' height='120px' key={row} className='row'>
         {boxes}
       </Flexbox>
     );
@@ -59,12 +61,32 @@ function build() {
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2> <span className='yellow'>____</span> on a <img src={scooter} id="scooter" /> <span className='small-caps'>bingo</span></h2>
+      <div className='App'>
+        <div className='App-header'>
+          <h2> <span className='yellow'>____</span> on a <img src={scooter} id='scooter' alt='scooter' /> <span className='small-caps'>bingo</span></h2>
         </div>
         <div id='board'>
           { build() }
+        </div>
+        <div id='explanations'>
+          <div id='rules'>
+
+            <h2 className='yellow'>rules</h2>
+            <ul className='list'>
+              <li><p><span className='bold'>Combos are cool</span> — you see a family of four with their pet dog, mark both categories, you see a dude on a moto with a tree without headlights? You get both.</p></li>
+              <li><p><span className='bold'>Winner of the game buys the beers that night</span> — why not the loser? Because the winner was the lucky duck who saw all this magic.</p></li>
+              <li><p><span className='bold'>This game never really ends</span></p></li>
+            </ul>
+          </div>
+
+          <div>
+          <h2 className='yellow'>what is this?</h2>
+            <ul className='list'>
+              <li><p>In Vietnam, motorbikes are the main form of transportation, and out of necessity and in lieu of pick up trucks, people pack all sorts of stuff on their motos.</p></li>
+              <li><p><a href='http://there.today'>Ryan and Camille</a>spent 4 weeks motorbiking from Saigon to Hanoi, and would play a version of this game at every coffee break ('DID YOU SEE THAT??'), so <a href='http://github.com/camilleanne/'>Camille</a> codified it into a game.</p></li>
+              <li><p>Pass on suggestions for more bingo boxes on <a href='https://github.com/camilleanne/motobingo/issues/1'>github</a></p></li>
+            </ul>
+          </div>
         </div>
       </div>
     );

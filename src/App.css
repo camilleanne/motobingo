@@ -62,3 +62,24 @@ h2 {
 .yellow {
   color: #ffd903;
 }
+
+#explanations {
+  margin-right: auto;
+  margin-left: auto;
+  width: 560px;
+  padding: 20px;
+}
+
+.list {
+  color: #ffd903;
+  padding-left: 10px;
+}
+
+.list p {
+  color: white;
+  text-align: left;
+}
+
+.bold {
+  font-weight: bold;
+}
