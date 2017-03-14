@@ -13,6 +13,12 @@ h2 {
   margin: 0px;
 }
 
+a {
+  font-weight: 600;
+  color: #DEFFF9;
+  text-decoration: none;
+}
+
 #scooter {
   height: 60px;
   top: 10px;

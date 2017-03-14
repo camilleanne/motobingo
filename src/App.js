@@ -83,7 +83,7 @@ class App extends Component {
           <h2 className='yellow'>what is this?</h2>
             <ul className='list'>
               <li><p>In Vietnam, motorbikes are the main form of transportation, and out of necessity and in lieu of pick up trucks, people pack all sorts of stuff on their motos.</p></li>
-              <li><p><a href='http://there.today'>Ryan and Camille</a>spent 4 weeks motorbiking from Saigon to Hanoi, and would play a version of this game at every coffee break ('DID YOU SEE THAT??'), so <a href='http://github.com/camilleanne/'>Camille</a> codified it into a game.</p></li>
+              <li><p><a href='http://there.today'>Ryan and Camille</a> spent 4 weeks motorbiking from Saigon to Hanoi, and would play a version of this game at every coffee break ('DID YOU SEE THAT??'), so <a href='http://github.com/camilleanne/'>Camille</a> codified it into a game.</p></li>
               <li><p>Pass on suggestions for more bingo boxes on <a href='https://github.com/camilleanne/motobingo/issues/1'>github</a></p></li>
             </ul>
           </div>
