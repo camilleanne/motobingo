@@ -19,6 +19,20 @@ a {
   text-decoration: none;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.small {
+  font-size: 10px;
+  line-height: 10px;
+  margin: 0px;
+}
+
 .blank {
   top: -5px;
   position: relative;
@@ -47,9 +61,13 @@ a {
   color: #334D5C;
   font-size: 1.1em;
   font-weight: 500;
-
 }
 
+@media (max-width: 500px) {
+  .box {
+    font-size: .7em;
+  }
+}
 #board {
   max-width: 600px;
   height: 600px;
@@ -81,7 +99,8 @@ a {
 #explanations {
   margin-right: auto;
   margin-left: auto;
-  width: 560px;
+  max-width: 560px;
+  min-width: 360px;
   padding: 20px;
 }
 
@@ -93,8 +112,4 @@ a {
 .list p {
   color: white;
   text-align: left;
-}
-
-.bold {
-  font-weight: bold;
 }
