@@ -132,3 +132,10 @@ a {
   color: white;
   text-align: left;
 }
+
+.confetti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+}
