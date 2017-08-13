@@ -22,7 +22,9 @@ var categories = [
 	'50 gallon drum',
 	'flowers',
 	'a keg',
-	'furniture'
+	'furniture',
+	'live fish',
+	'a wheelbarrow'
 ];
 
 module.exports = categories;
