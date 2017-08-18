@@ -77,18 +77,21 @@ a {
 @media (max-width: 400px) {
   .box {
     font-size: .7em;
+    padding: 8px;
   }
 }
 
 @media (max-width: 360px) {
   .box {
-    font-size: .55em;
+    font-size: .5em;
+    padding: 4px;
   }
 }
 
 @media (max-width: 320px) {
   .box {
     font-size: .35em;
+    padding: 2px;
   }
 }
 
