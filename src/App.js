@@ -92,7 +92,6 @@ class Board extends React.Component {
       rows.push(
         <Flexbox
           flexDirection='row'
-          height='120px'
           key={row}
           className='row'>
           {boxes}

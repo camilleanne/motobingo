@@ -68,23 +68,49 @@ a {
   hyphens: auto;
 }
 
+#board {
+  max-width: 600px;
+  height: 600px;
+  margin: auto;
+}
+
+.row {
+  height: 120px;
+}
+
 @media (max-width: 550px) {
   .box {
     font-size: .9em;
+  }
+  .row {
+    height: 110px;
+  }
+  #board {
+    height: 550px;
   }
 }
 
 @media (max-width: 400px) {
   .box {
-    font-size: .7em;
+    font-size: .65em;
     padding: 8px;
+    line-height: 18px;
+  }
+  .row {
+    height: 80px;
+  }
+  #board {
+    height: 400px;
   }
 }
-
 @media (max-width: 360px) {
   .box {
     font-size: .5em;
     padding: 4px;
+    line-height: 15px;
+  }
+  .row {
+    height: ;
   }
 }
 
@@ -92,13 +118,8 @@ a {
   .box {
     font-size: .35em;
     padding: 2px;
+    line-height: 10px;
   }
-}
-
-#board {
-  max-width: 600px;
-  height: 600px;
-  margin: auto;
 }
 
 .box.clicked:not(.free){
