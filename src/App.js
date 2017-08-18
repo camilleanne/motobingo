@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 import Confetti from 'react-dom-confetti';
 
 import './App.css';
-import scooter from './scooter-15.svg';
-import star from './star-15.svg';
+import scooter from './assets/scooter-15.svg';
+import star from './assets/star-15.svg';
 
 import Flexbox from 'flexbox-react';
 
@@ -17,26 +17,37 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <Board />
-    );
+    return (<Board />);
   }
 }
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { won: false };
+    this.state = { win: false };
+    this.clicked = {};
+    this.calculateWin = this.calculateWin.bind(this);
+    this.resetClicked = this.resetClicked.bind(this);
   }
 
-  handleChange(e) {
-    const clicked = document.getElementsByClassName('clicked');
-    var arr = [];
-    for (var i = 0; i < clicked.length; i ++) {
-      arr.push(clicked[i].id);
+  calculateWin(id, clicked) {
+    this.clicked[id] = clicked;
+    const boxes = document.getElementsByClassName('clicked');
+    const arr = [];
+    for (var i = 0; i < boxes.length; i ++) {
+      arr.push(boxes[i].id);
     }
     this.setState(prevState => ({
       win: winq(arr, 5)
+    }));
+  }
+
+  resetClicked() {
+    for (var c in this.clicked) {
+      this.clicked[c] = false;
+    }
+    this.setState(prevState => ({
+      win: false
     }));
   }
 
@@ -48,6 +59,47 @@ class Board extends React.Component {
       elementCount: 89,
       decay: 0.95
     };
+    const no = 5;
+    const rows = [];
+    var i = 0;
+    for (var row = 0; row < no; row++) {
+      const boxes = [];
+      for (var column = 0; column < no; column++) {
+        var id = row + '!' + column;
+
+        // if it is the center box, make it a star
+        if (row === 2 && column === 2) {
+          if (!this.clicked[id]) this.clicked[id] = true;
+          boxes.push(<Box
+            update='false'
+            content={<img src={star} alt='star' />}
+            id={id}
+            key={id}
+            clicked={this.clicked[id]}
+            classes='free' />);
+        } else {
+          if (!this.clicked[id]) this.clicked[id] = false;
+          boxes.push(<Box
+            calculateWin={ this.calculateWin.bind(this) }
+            content={(categories[i] || 'nope')}
+            id={id}
+            key={id}
+            clicked={this.clicked[id]}
+            classes='' />);
+          i ++;
+        }
+      }
+      rows.push(
+        <Flexbox
+          flexDirection='row'
+          height='120px'
+          key={row}
+          className='row'>
+          {boxes}
+        </Flexbox>
+      );
+    }
+
     return (
       <div className='App'>
         <div className='App-header'>
@@ -56,28 +108,27 @@ class Board extends React.Component {
           <h2><span className='small-caps'>bingo</span></h2>
         </div>
         <div id='board'>
-          <Confetti className='confetti' active={ this.state.win } config={ config }/>
-
-          { build(this.handleChange.bind(this)) }
+          <Confetti
+            className='confetti'
+            active={ this.state.win }
+            config={ config }/>
+          { rows }
         </div>
         <div id='options'>
-          // <a>Reset board</a>
+          <a onClick={ this.resetClicked.bind(this) }>Reset board</a>
         </div>
 
         <div id='explanations'>
           <div id='rules'>
-
             <h2 className='yellow'>rules</h2>
             <ul className='list'>
               <li><p><span className='bold'>Standard Bingo rules</span> — continue playing until one player has covered a vertical, horizontal, or diagonal pattern of five grid spaces on their card. First player to get Bingo wins the game.</p></li>
               <li><p><span className='bold'>Plurals count</span> —  duh, if you see <span className='italic'>pigs</span> on a moto instead of <span className='italic'>a pig</span> on a moto, you get the space, and bonus, you saw a lot of pigs, are they not cute?</p></li>
               <li><p><span className='bold'>Combos are cool</span> — you see a family of four with their pet dog, mark both categories, you see a dude on a moto with a tree without headlights? You get both.</p></li>
               <li><p><span className='bold'>Winner of the game buys the beers that night</span> — why not the loser? Because the winner was the lucky duck who saw all this magic.</p></li>
-
               <li><p><span className='bold'>This game never really ends.</span></p></li>
             </ul>
           </div>
-
           <div>
           <h2 className='yellow'>what is this?</h2>
             <ul className='list'>
@@ -96,8 +147,7 @@ class Board extends React.Component {
 class Box extends React.Component {
   constructor(props) {
     super(props);
-    if (this.props.update === 'false') this.state = {clicked: true };
-    else this.state = { clicked: false };
+    this.state = { clicked: this.props.clicked };
 
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
@@ -107,11 +157,19 @@ class Box extends React.Component {
     if (this.props.update === 'false') return;
     this.setState(prevState => ({
       clicked: !prevState.clicked
-    }), this.props.calculateWin);
+    }), () => { this.props.calculateWin(this.props.id, this.state.clicked) });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.update === 'false') return;
+    this.setState(prevState => ({
+      clicked: nextProps.clicked
+    }));
   }
 
   render() {
     return (
+
       <Flexbox
         flexGrow={1}
         width='100px'
@@ -126,32 +184,6 @@ class Box extends React.Component {
       </Flexbox>
     );
   }
-}
-
-function build(calculateWin) {
-  const no = 5;
-  var rows = [];
-  var i = 0;
-  for (var row = 0; row < no; row++) {
-    const boxes = [];
-
-    for (var column = 0; column < no; column++) {
-      var id = row + '!' + column;
-      // if it is the center box, make it a star
-      if (row === 2 && column === 2) {
-        boxes.push(<Box update='false' content={<img src={star} alt='star' />} id={id} key={id} classes='free' />);
-      } else {
-        boxes.push(<Box calculateWin={calculateWin} content={(categories[i] || 'nope')} id={id} key={id} classes='' />);
-        i ++;
-      } 
-    }
-    rows.push(
-      <Flexbox flexDirection='row' height='120px' key={row} className='row'>
-        {boxes}
-      </Flexbox>
-    );
-  }
-  return rows;
 }
 
 function winq(arr, dimensions) {

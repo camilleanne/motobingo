@@ -61,6 +61,11 @@ a {
   color: #334D5C;
   font-size: 1.1em;
   font-weight: 500;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 @media (max-width: 550px) {
@@ -77,13 +82,13 @@ a {
 
 @media (max-width: 360px) {
   .box {
-    font-size: .65em;
+    font-size: .55em;
   }
 }
 
 @media (max-width: 320px) {
   .box {
-    font-size: .6em;
+    font-size: .35em;
   }
 }
 
