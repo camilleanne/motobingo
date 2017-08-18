@@ -114,7 +114,7 @@ class Board extends React.Component {
           { rows }
         </div>
         <div id='options'>
-          <a onClick={ this.resetClicked.bind(this) }>Reset board</a>
+          <a id='reset' onClick={ this.resetClicked.bind(this) }>reset board</a>
         </div>
 
         <div id='explanations'>
