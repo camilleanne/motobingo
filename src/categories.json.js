@@ -1,7 +1,7 @@
 var categories = [
 	'a refrigerator',
 	'a family of four',
-	'anything longer, or taller, than 15 ft',
+	'anything longer, or taller, than 3m',
 	'> 10 chickens or ducks',
 	'a dog',
 	'another moto',
@@ -19,12 +19,15 @@ var categories = [
 	'three wheels',
 	'open containers of water',
 	'a pig',
-	'50 gallon drum',
+	'a 50 gallon drum',
 	'flowers',
 	'a keg',
 	'furniture',
 	'live fish',
-	'a wheelbarrow'
+	'a wheelbarrow',
+	'a bicycle',
+	'nothing, but towing a trailer',
+	'pineapples'
 ];
 
 module.exports = categories;

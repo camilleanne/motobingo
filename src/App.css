@@ -9,6 +9,8 @@
   font-size: 2em;
 }
 
+/* TYPE */
+
 h2 {
   margin: 0px;
 }
@@ -37,6 +39,18 @@ a {
   top: -5px;
   position: relative;
 }
+
+.small-caps {
+  font-variant: small-caps;
+  font-size: 2.2em;
+  line-height: 40px;
+}
+
+.yellow {
+  color: #ffd903;
+}
+
+/* APP */
 
 #scooter {
   height: 60px;
@@ -85,18 +99,6 @@ a {
   background-color: red;
   font-size: 50px;
   text-align: center;
-}
-
-.small-caps {
-  font-variant: small-caps;
-  font-size: 2.2em;
-  color: #888;
-  opacity: 0.5;
-  line-height: 40px;
-}
-
-.yellow {
-  color: #ffd903;
 }
 
 #explanations {

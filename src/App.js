@@ -102,9 +102,8 @@ class Board extends React.Component {
     return (
       <div className='App'>
         <div className='App-header'>
-          <h2><span className='yellow blank'>____</span> on a <img src={scooter} id='scooter' alt='scooter' /></h2>
-          <p className='small'>(in <span className='yellow'>Vietnam</span>)</p>
-          <h2><span className='small-caps'>bingo</span></h2>
+          <h2><span className='yellow blank'>____</span> on a moto</h2>
+          <h2><span className='small-caps yellow'>bingo</span></h2>
         </div>
         <div id='board'>
           <Confetti
@@ -122,18 +121,18 @@ class Board extends React.Component {
             <h2 className='yellow'>rules</h2>
             <ul className='list'>
               <li><p><span className='bold'>Standard Bingo rules</span> — continue playing until one player has covered a vertical, horizontal, or diagonal pattern of five grid spaces on their card. First player to get Bingo wins the game.</p></li>
-              <li><p><span className='bold'>Plurals count</span> —  duh, if you see <span className='italic'>pigs</span> on a moto instead of <span className='italic'>a pig</span> on a moto, you get the space, and bonus, you saw a lot of pigs, are they not cute?</p></li>
+              <li><p><span className='bold'>Plurals count</span> — if you see <span className='italic'>pigs</span> on a moto instead of <span className='italic'>a pig</span> on a moto, you get the space, and bonus, you saw a lot of pigs.</p></li>
               <li><p><span className='bold'>Combos are cool</span> — you see a family of four with their pet dog, mark both categories, you see a dude on a moto with a tree without headlights? You get both.</p></li>
-              <li><p><span className='bold'>Winner of the game buys the beers that night</span> — why not the loser? Because the winner was the lucky duck who saw all this magic.</p></li>
+              <li><p><span className='bold'>Winner buys the beers/ice cream that night</span> — why not the loser? Because the winner was the lucky duck who saw all this magic.</p></li>
               <li><p><span className='bold'>This game never really ends.</span></p></li>
             </ul>
           </div>
           <div>
           <h2 className='yellow'>what is this?</h2>
             <ul className='list'>
-              <li><p>In Vietnam, motorbikes are the main form of transportation, and out of necessity and in lieu of pick up trucks, people pack all sorts of stuff on their motos.</p></li>
-              <li><p><a href='http://there.today'>Ryan and Camille</a> spent 4 weeks motorbiking from Saigon to Hanoi, and would play a version of this game at every coffee break (<span className='italic'>'DID YOU SEE THAT??'</span>), so <a href='http://github.com/camilleanne/'>Camille</a> codified it into a game.</p></li>
-              <li><p><span className='bold'>Why does the game board shuffle on every refresh?</span> — chances are you are playing this with someone who is riding through Vietnam with you, and is probably seeing the same road nonsense you are, and it would be a boring game if you both had the same board, so the randomized board gives someone an actual chance of winning, instead of eternal ties. Enjoy the chaos, it's why you are driving through South East Asia on a 2 wheeled death machine anyways, right?</p></li>
+              <li><p>In much of the developing world, motorbikes are the main form of transportation. Out of necessity and in lieu of pick up trucks, people pack all sorts of stuff on their motos.</p></li>
+              <li><p><a href='http://there.today'>We</a> have been driving motorcycles and now a camper van across the world through Asia and Latin America and would play a version of this game at every coffee break, and a game board makes it so much easier!</p></li>
+              <li><p><span className='bold'>Why does the game board shuffle on every refresh?</span> — chances are you are playing this with someone who is traveling with you, and it would be a boring game if you both had the same board, so the randomized board gives someone an actual chance of winning, instead of eternal ties. Enjoy the chaos, it's why you are traveling around with these 2 wheeled death machine anyways, right?</p></li>
               <li><p>Pass on suggestions for more bingo boxes on <a href='https://github.com/camilleanne/motobingo/issues/1'>github</a></p></li>
             </ul>
           </div>
